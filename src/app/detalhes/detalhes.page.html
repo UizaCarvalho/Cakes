@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>detalhes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <img src="{{ bolo.imagem }}" />
+    <ion-card-header>
+      <ion-card-subtitle>{{ bolo.nome }}</ion-card-subtitle>
+      <ion-card-title>{{ bolo.descricao }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ bolo.valor }}
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="full" fill="solid" (click)="adicionarCarrinho()">Adicionar ao carrinho</ion-button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color=primary>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Seu Pedido
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-title>Nossos Bolos</ion-title>
+    </ion-list-header>
+    <ion-item *ngFor="let bolo of bolos" (click)="detalhe(bolo)">
+      <ion-avatar slot="start">
+        <img src="{{ bolo.imagem }}">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ bolo.nome }}</h2>
+        <h3>{{ bolo.descricao }}</h3>
+        <p>{{ bolo.valor }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Dados para Entrega</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-input>Nome</ion-input>
+      <ion-input>Telefone</ion-input>
+      <ion-input>Endereço</ion-input>
+    </ion-card-content>
+  </ion-card>
+  <ion-button expand="block" (click)="finalizar()">Confirmar Pedido</ion-button>
+
+</ion-content>

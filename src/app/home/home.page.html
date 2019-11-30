@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color=primary>
+    <ion-title>
+      Nossos Bolos
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="carrinho()">
+        <ion-icon icon-only name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+<!-- esse codigo certo, listando bonitinho-->
+  <ion-list>
+    <ion-list-header>
+      <ion-title>Nossos Bolos</ion-title>
+    </ion-list-header>
+    <ion-item *ngFor="let bolo of bolos" (click)="detalhe(bolo)"> <!-- a imagem ta grande, mas não sei como edita ela, ver depois-->
+      <ion-avatar slot="start">
+        <img src="{{ bolo.imagem }}">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ bolo.nome }}</h2>
+        <h3>{{ bolo.descricao }}</h3>
+        <p>{{ bolo.valor }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
